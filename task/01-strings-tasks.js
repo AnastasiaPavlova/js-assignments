@@ -38,7 +38,7 @@ function concatenateStrings(value1, value2) {
  *   ''      => 0
  */
 function getStringLength(value) {
-    throw new Error('Not implemented');
+    return value.length;
 }
 
 /**
@@ -55,7 +55,8 @@ function getStringLength(value) {
  *   'Chuck','Norris'  => 'Hello, Chuck Norris!'
  */
 function getStringFromTemplate(firstName, lastName) {
-    throw new Error('Not implemented');
+    var template = "Hello, ";
+    return template.concat(firstName, ' ',lastName, '!');
 }
 
 /**
@@ -69,7 +70,7 @@ function getStringFromTemplate(firstName, lastName) {
  *   'Hello, Chuck Norris!' => 'Chuck Norris'
  */
 function extractNameFromTemplate(value) {
-    throw new Error('Not implemented');
+    return value.split(',')[1].slice(1, -1).trim();
 }
 
 
@@ -84,7 +85,7 @@ function extractNameFromTemplate(value) {
  *   'cat'       => 'c'
  */
 function getFirstChar(value) {
-    throw new Error('Not implemented');
+    return value.slice(0,1);
 }
 
 /**
@@ -99,7 +100,7 @@ function getFirstChar(value) {
  *   '\tHello, World! ' => 'Hello, World!'
  */
 function removeLeadingAndTrailingWhitespaces(value) {
-    throw new Error('Not implemented');
+    return value.trim();
 }
 
 /**
@@ -114,7 +115,7 @@ function removeLeadingAndTrailingWhitespaces(value) {
  *   'cat', 3 => 'catcatcat'
  */
 function repeatString(value, count) {
-    throw new Error('Not implemented');
+    return value.repeat(count);
 }
 
 /**
@@ -130,7 +131,7 @@ function repeatString(value, count) {
  *   'ABABAB','BA' => 'ABAB'
  */
 function removeFirstOccurrences(str, value) {
-    throw new Error('Not implemented');
+    return str.replace(value, '');
 }
 
 /**
@@ -145,7 +146,7 @@ function removeFirstOccurrences(str, value) {
  *   '<a>' => 'a'
  */
 function unbracketTag(str) {
-    return str.replace(/(<|>)/g,'')
+    return str.replace(/(<|>)/g,'');
 }
 
 
@@ -187,10 +188,10 @@ function extractEmails(str) {
  *
  * @example
  *
- *            '┌────┐\n'+
+ *            '┌ ─ ─ ─ ─ ┐\n'+
  *  (6,4) =>  '│    │\n'+
  *            '│    │\n'+
- *            '└────┘\n'
+ *            '└ ─ ─ ─ ─ ┘\n'
  *
  *  (2,2) =>  '┌┐\n'+
  *            '└┘\n'
@@ -238,7 +239,13 @@ function encodeToRot13(str) {
  *   isString(new String('test')) => true
  */
 function isString(value) {
-    throw new Error('Not implemented');
+    if(value instanceof String) {
+        return true;
+    } else if (typeof value === 'string') {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 
